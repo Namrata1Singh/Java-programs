@@ -1,0 +1,39 @@
+in the given array/list, 'M' numbers are present twice and one number is present only once.
+You need to find and return that number which is unique in the array/list.
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        
+        // HashMap<Integer,Integer> map = new HashMap<>();
+        // for(int i=0;i<n;i++){
+        //     if(map.containsKey(arr[i])){
+        //         map.put(arr[i],map.get(arr[i])+1);
+        //     }else{
+        //         map.put(arr[i],1);
+        //     }
+        // }
+        // int ans = -1;
+        // for(int i=0;i<n;i++){
+        //     if(map.get(arr[i]) == 1){
+        //         ans = arr[i];
+        //         break;
+        //     }
+        // }
+        // System.out.println(ans);
+        
+        // Best approach, find xor of array
+        int ans = 0;
+        for(int i=0;i<n;i++){
+            ans = ans^arr[i];
+        }
+        System.out.println(ans);
+    }
+}
